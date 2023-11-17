@@ -6,8 +6,9 @@
     <title>MyDiaryApp</title>
 </head>
 <body>
-    <h1>Diary App by Django</h1>
-    <h2><a href="{%url 'diary:diary_create'%}">日記の投稿</a></h2>
-    <h2><a href="{%url 'diary:diary_list'%}">日記の一覧</a></h2>
+    <p>{{diary.date}}</p>
+    <p>{{diary.title}}</p>
+    <p>{{diary.text}}</p>
+    <a href="{%url 'diary:diary_list'%}">戻る</a>
 </body>
 </html>
