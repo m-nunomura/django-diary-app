@@ -1,6 +1,17 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView,CreateView
+from . models import Diary
+from . forms import DiaryForm
+from django.urls import reverse_lazy
 # Create your views here.
 
 class IndexView(TemplateView):
     template_name = "diary/index.html"
+
+class DiaryCreateVeiw(CreateView):
+    template_name = "diary/diary_create.html"
+    form_class = DiaryForm
+    success_url = reverse_lazy("diary:diary_create_complete")
+
+class DiaryCreateComplete(TemplateView):
+    template_name = "diary/diary_create_complete.html"

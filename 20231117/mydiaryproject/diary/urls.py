@@ -23,4 +23,6 @@ app_name = "diary"
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("index/",views.IndexView.as_view(),name="index"),
+    path("diary/create/",views.DiaryCreateVeiw.as_view(),name="diary_create"),
+    path("diary/create/complete/",views.DiaryCreateComplete.as_view(),name="diary_create_complete"),
 ]
